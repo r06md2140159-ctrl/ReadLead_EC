@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本検索ガチャ</title>
+    <link rel="stylesheet" href="./recet.css">
+    <link rel="stylesheet" href="./gacha.css">
+</head>
+
+<body>
+
+    <div class="top">
+        <h1>本検索ガチャ</h1>
+        <p>ここは普段とは違った本との出会いとなる場所です。
+            新しい本を手に取ってみませんか。</p>
+    </div>
+
+
+
+    <div id="gachaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="gachaTitleTxt"></h2>
+            </div>
+            <div class="modal-body">
+                <img id="playGif" src="" alt="抽選のアニメーション"><br>
+                <button class="js-result">アニメーションをスキップ</button>
+
+            </div>
+        </div>
+    </div>
+    <!--カプセル排出のモーダルウィンドウここまで-->
+
+    <!--☆☆☆ガチャガチャNo.0の設置ここから：choiceGachaBox(0)←ここの数字でガチャガチャを選択☆☆☆-->
+    <div class="modal-btn" onclick="choiceGachaBox(0)" style="cursor: pointer;">
+
+        <p class="info">この本をTAP</p>
+        <img loading="lazy" src="./img/book.webp" width="250" height="400" alt="ここを押してください">
+    </div>
+    <!--☆☆☆ガチャガチャNo.0の設置ここまで：choiceGachaBox(0)←ここの数字でガチャガチャを選択☆☆☆-->
+
+    <!--この下に新規のガチャガチャを追加-->
+
+    <div class="clear"></div>
+
+
+    <div class="back">
+        <a href="./index.html">TOPに戻る▶︎</p></a>
+    </div>
+
+
+
+
+    <!--ガチャ用スクリプトここから-->
+    <script type="text/javascript">
+
+        const GachaList = [
+            //ガチャガチャNo.0の結果リスト
+            [
+                "./result1.html",
+                "./result2.html",
+                "./result3.html"
+            ],
+            //この上に結果リストを追加していく
+        ];
+
+        //モーダルのタイトル部分に表示されます
+        const GachaTitleList = [
+            ""
+            //この上に追加していく
+        ];
+
+        // gif
+        const gifs = [
+            '../compo.gif'
+        ];
+
+
+
+        //モーダル関係s
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let GachaNum = 0;
+            let timer;
+
+            const jsModal = document.getElementById('gachaModal');
+            const jamp = document.querySelector('.js-result');
+            const gachaTitle = document.getElementById('gachaTitleTxt');
+            const selectedGif = document.getElementById("playGif");
+
+            //ガチャを抽選する関数
+            function Gacha(tempNum) {
+                var k = Math.floor(Math.random() * GachaList[tempNum].length);
+                return GachaList[tempNum][k];
+            }
+
+            //ランダムなgifを再生する関数
+            function randomGif() {
+                var j = Math.floor(Math.random() * gifs.length);
+                selectedGif.src = gifs[j] + '?t=' + new Date().getTime();
+            }
+
+            //ガチャがクリックされた時
+            window.choiceGachaBox = function (tempNum) {
+                GachaNum = tempNum;
+                gachaTitle.textContent = `${GachaTitleList[GachaNum]}`;
+                randomGif();
+                timer = setTimeout(function () {
+                    window.location.href = Gacha(GachaNum);
+                    clearTimeout(timer);
+                }, 4 * 1000);
+                jsModal.style.display = 'block';
+            };
+
+            //「結果だけ見る」ボタンがクリックされた時
+            jamp.addEventListener('click', result);
+            function result() {
+                window.location.href = Gacha(GachaNum);
+                clearTimeout(timer);
+            }
+
+            //モーダルコンテンツ以外がクリックされた時→モーダルウィンドウを閉じる
+            window.addEventListener('click', outsideClose);
+            function outsideClose(event) {
+                if (event.target === jsModal) {
+                    clearTimeout(timer);
+                    jsModal.style.display = 'none';
+                }
+            }
+
+            //戻る・進むボタン対応
+            window.addEventListener('pageshow', pageShow);
+            function pageShow(event) {
+                jsModal.style.display = 'none';
+                if (event.persisted) {
+                    window.location.reload();
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

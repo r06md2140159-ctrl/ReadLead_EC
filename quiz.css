@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+img {
+    width: 100%;
+}
+
+body {
+    color: white;
+    background-image: url(../img/forest2.jpg);
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(46, 46, 46);
+    text-align: center;
+}
+
+/* ここまで全適用 */
+.top {
+    text-align: center;
+    border: 1px solid;
+    margin: 30px;
+    padding-bottom: 30px;
+}
+
+.top a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+
+    &:hover {
+        color: rgb(139, 139, 139);
+    }
+}
+
+.choose_box {
+    position: relative;
+    height: 50vw;
+    width: 100%;
+
+}
+
+.choose_box p {
+    color: white;
+    font-size: 24px;
+    width: 100%;
+}
+
+.choose_box ul {
+    text-align: center;
+
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.choose_box ul li {
+    list-style: none;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.choose_box ul li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.choose_box ul li a {
+    background-color: rgba(238, 238, 238, 0.81);
+    box-shadow: 0 6px 0 rgb(149, 145, 139), 0 8px 10px rgba(0, 0, 0, 0.2);
+    padding: 14px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    position: relative;
+    top: 0;
+    left: -38px;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 22px;
+
+    &:hover {
+        background-color: rgb(179, 179, 179);
+    }
+
+    &:active {
+        top: 4px;
+        box-shadow: 0 2px 0 rgb(151, 144, 130), 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+h4 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.fit {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#q_05 span,
+#q_06 span,
+#q_07 span,
+#q_08 span {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#q_05 span,
+#q_06 span,
+#q_07 span,
+#q_08 span {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* ボタン設定 */
+.next a {
+    background-color: rgb(9, 98, 43);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgb(5, 54, 24), 0 8px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+    position: relative;
+    top: 0;
+
+    &:hover {
+        background-color: rgb(98, 150, 117);
+    }
+
+    &:active {
+        top: 4px;
+        box-shadow: 0 2px 0 rgb(212, 223, 216), 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.back a {
+    background-color: rgb(117, 109, 93);
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgb(63, 59, 51), 0 8px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+    position: relative;
+    top: 0;
+
+    &:hover {
+        background-color: rgb(178, 166, 140);
+    }
+
+    &:active {
+        top: 4px;
+        box-shadow: 0 2px 0 rgb(212, 223, 216), 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* 問ごとの設定 */
+
+.result img {
+    width: 35%;
+    text-align: center;
+    margin-left: 115px;
+}
+
+.result p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.q_01 {
+    text-align: center;
+}

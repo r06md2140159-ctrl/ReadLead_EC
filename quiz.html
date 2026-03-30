@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./quiz.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+    <div class="top">
+        <h1>本検索診断</h1>
+        <p>あなたにぴったりの小説に導きます。</p>
+        <a href="./index.html">TOPに戻る▶︎</a>
+    </div>
+
+    <div class="choose_box">
+
+        <!-- 最初の質問 -->
+        <div id="q_01" class="fit">
+            <p>質問<br>好きな色はどれですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_02">赤</a></li>
+                <li class="odd"><a class="btn" href="#q_02">青</a></li>
+                <li class="odd"><a class="btn" href="#q_10">黄</a></li>
+                <li class="odd"><a class="btn" href="#q_10">黒</a></li>
+            </ul>
+        </div>
+
+        <!-- ルート１ -->
+        <!-- 分岐 02_03, 02_04 -->
+        <div id="q_02" style="display: none;">
+            <p>質問<br>話すことが好きですか、聞くことが好きですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_03">話すこと</a></li>
+                <li class="odd"><a class="btn" href="#q_04">聞くこと</a></li>
+            </ul>
+        </div>
+
+
+        <!-- 分岐 03_05, 03_06 結果へ -->
+        <div id="q_03" style="display: none;">
+            <p>質問<br>喜劇が好きですか、悲劇が好きですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_05">喜劇</a></li>
+                <li class="odd"><a class="btn" href="#q_06">悲劇</a></li>
+            </ul>
+        </div>
+
+        <!-- 分岐 04_07, 04_08 結果へ -->
+        <div id="q_04" style="display: none;">
+            <p>質問<br>癒されたいですか、成長したいですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_07">癒されたい</a></li>
+                <li class="odd"><a class="btn" href="#q_08">成長したい</a></li>
+            </ul>
+        </div>
+
+        <!-- ルート２ -->
+        <!-- 分岐 10_11, 10_12 -->
+        <div id="q_10" style="display: none;">
+            <p>質問<br>話すことが好きですか、聞くことが好きですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_11">話すこと</a></li>
+                <li class="odd"><a class="btn" href="#q_12">聞くこと</a></li>
+            </ul>
+        </div>
+
+        <!-- 分岐 11_05, 11_06 -->
+        <div id="q_11" style="display: none;">
+            <p>質問<br>フィクションが好きですか、ノンフィクションが好きですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_05">フィクション</a></li>
+                <li class="odd"><a class="btn" href="#q_06">ノンフィクション</a></li>
+            </ul>
+        </div>
+
+        <!-- 分岐 12_07, 12_08 -->
+        <div id="q_12" style="display: none;">
+            <p>質問<br>あなたは内向的ですか、外向的ですか。</p>
+            <ul class="flexbox fw">
+                <li class="even"><a class="btn" href="#q_07">内向的</a></li>
+                <li class="odd"><a class="btn" href="#q_08">外向的</a></li>
+            </ul>
+        </div>
+
+
+        <!-- 結果 -->
+        <!-- 選択肢の答え① -->
+        <div class="result">
+            <div id="q_05" style="display: none;">
+                <p>あなたにぴったりの書籍は</p>
+                <h4>『楽園のカンヴァス』：原田マハ</h4>
+                <img src="../img/13.webp" alt="">
+                <span class="next"><a href="">この本を読む</a></span>
+                <span class="back"><a class="btn" href="#q_01">もう一度診断する</a></span>
+            </div>
+
+            <!-- 選択肢の答え② -->
+            <div id="q_06" style="display: none;">
+                <p>あなたにぴったりの書籍は</p>
+                <h4>『花の鎖』：湊かなえ</h4>
+                <img src="../img/10.webp" alt="">
+                <span class="next"><a href="">この本を読む</a></span>
+                <span class="back"><a class="btn" href="#q_01">もう一度診断する</a></span>
+            </div>
+
+            <!-- 選択肢の答え③ -->
+            <div id="q_07" style="display: none;">
+                <p>あなたにぴったりの書籍は</p>
+                <h4>『向日葵の咲かない夏』：道尾秀介</h4>
+                <img src="../img/14.webp" alt="">
+                <span class="next"><a href="">この本を読む</a></span>
+                <span class="back"><a class="btn" href="#q_01">もう一度診断する</a></span>
+            </div>
+
+            <!-- 選択肢の答え④ -->
+            <div id="q_08" style="display: none;">
+                <p>あなたにぴったりの書籍は</p>
+                <h4>『夢幻花』：東野圭吾</h4>
+                <img src="../img/12.webp" alt="">
+                <span class="next"><a href="">この本を読む</a></span>
+                <span class="back"><a class="btn" href="#q_01">もう一度診断する</a></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script>
+    $(function () {
+        $(".btn").on("click", function () {
+            $(this).closest("div").css("display", "none");
+            id = $(this).attr("href");
+            $(id).addClass("fit").show("slow");
+        });
+    });
+</script>
+
+</html>
