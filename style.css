@@ -199,7 +199,7 @@ header {
 /* ここからmain */
 /* この下top */
 .top {
-    background-image: url(../img/table1.png);
+    background-image: url(table1.png);
     padding: 100px 40px 40px 40px;
     text-align: center;
 }
